@@ -15,7 +15,7 @@ from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
 )
 
-VERSION = "1.10.21"
+VERSION = "1.10.22"
 NAME = "Turzi Alarmo"
 MANUFACTURER = "Turzi"
 
