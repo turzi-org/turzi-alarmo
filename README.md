@@ -2,7 +2,7 @@
 
 This is an alarm system integration for Home Assistant. It provides a user interface for setting up your own alarm system completely from the browser.
 
-Turzi Alarmo is the Turzi-maintained build of [Alarmo](https://github.com/nielsfaber/alarmo) by [@nielsfaber](https://github.com/nielsfaber), released under the Apache License 2.0. See [Credits](#credits).
+Turzi Alarmo is the Turzi-maintained build of the open-source Alarmo project, released under the Apache License 2.0. See [Credits](#credits).
 
 - [Turzi Alarmo](#turzi-alarmo)
   - [Introduction](#introduction)
@@ -52,7 +52,7 @@ Turzi Alarmo is the Turzi-maintained build of [Alarmo](https://github.com/nielsf
         - [Switching a device](#switching-a-device)
         - [Advanced actions](#advanced-actions)
       - [Automatic arming](#automatic-arming)
-    - [Alarmo-card](#alarmo-card)
+    - [Lovelace card](#lovelace-card)
   - [Third party platforms](#third-party-platforms)
     - [Android MQTT Alarm Panel](#android-mqtt-alarm-panel)
     - [Apple Homekit](#apple-homekit)
@@ -464,7 +464,7 @@ The following table provides the data that is provided with the `alarmo_ready_to
 | `armed_vacation`      | Indicates whether or not all conditions for arming in mode `armed_vacation` are met. Possible values: `true`, `false`. Only provided in case the arm mode `armed_vacation` is enabled for the entity.           | `true`                       |
 
 ##### Creating readiness indicator entities
-The `alarmo_ready_to_arm_modes_updated` event can be converted into an entity such that readiness information can be shown on a dashboard (similar to the green/red indicators on the arming buttons of alarmo-card). 
+The `alarmo_ready_to_arm_modes_updated` event can be converted into an entity such that readiness information can be shown on a dashboard. 
 
 Below is a code example for creating a binary sensor indicating whether the alarm can be set to mode armed away:
 ```yaml
@@ -746,14 +746,11 @@ action:
       skip_delay: true
 ```
 ---
-### Alarmo-card
+### Lovelace card
 
 After setting up Alarmo, it can be used for securing your house.
 
-For controlling the alarm through the HA frontend, you can set up a Lovelace card.
-There are two cards available:
-* [Lovelace Alarm Panel card](https://www.home-assistant.io/lovelace/alarm-panel/) which comes with HA. This offers basic arm/disarm functionality and displays the current state.
-* [Alarmo-card](https://github.com/nielsfaber/alarmo-card) which is intended as a companion for Alarmo. It offers some extra functionality on top of the standard alarm panel card, such as countdown timer for exit / entry delay and feedback messages with sensor(s) causing the alarm to be triggered or unable to arm.
+For controlling the alarm through the HA frontend, you can set up the [Lovelace Alarm Panel card](https://www.home-assistant.io/lovelace/alarm-panel/) which comes with HA. This offers basic arm/disarm functionality and displays the current state.
 
 
 ---
@@ -839,12 +836,7 @@ Want to contribute? See the [Development](./DEVELOPMENT.md) documentation for se
 
 
 ## Credits
-Turzi Alarmo is based on [Alarmo](https://github.com/nielsfaber/alarmo), created by [@nielsfaber](https://github.com/nielsfaber) and licensed under the Apache License 2.0 (see [LICENSE](./LICENSE)).
-
-The links below are the original author's donation pages. If you appreciate the Alarmo project, you can support them there:
-
-<a href="https://www.paypal.com/donate/?business=CLL4T6Y8ACXNN&no_recurring=0&item_name=Thank+you+for+supporting+my+work+on+the+Alarmo+project%2E+Your+donation+is+much+appreciated%21&currency_code=EUR" target="_blank"><img src="https://pics.paypal.com/00/s/YzlhMzI2ZjYtZDQxMi00NzNiLThmZTktOTk3MmEyYTA2Zjc0/file.PNG" width="150" /></a>
-<a href="https://www.buymeacoffee.com/vrdx7mi" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a>
+Turzi Alarmo is based on Alarmo, originally created by Niels Faber and licensed under the Apache License 2.0 (see [LICENSE](./LICENSE)).
 
 <!-- ### Alarm modes
  -->

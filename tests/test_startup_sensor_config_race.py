@@ -5,7 +5,7 @@ but the alarm entities restore their persisted state during platform setup, whic
 happens earlier in the startup sequence. Restoring the 'arming' state calls
 async_arm(), which reaches into SensorHandler before its config is available.
 
-Regression test for https://github.com/nielsfaber/alarmo/issues/1429
+Regression test for upstream issue #1429.
 """
 
 from typing import Any
