@@ -35,14 +35,14 @@ We use [`uv`](https://github.com/astral-sh/uv), a modern Python package manager 
 1. First, install `uv` by following the [official installation guide](https://docs.astral.sh/uv/getting-started/installation/)
 
 2. Fork the repository:
-   - Visit https://github.com/nielsfaber/alarmo
+   - Visit https://github.com/turzi-org/turzi-alarmo
    - Click the "Fork" button in the top right
    - Wait for GitHub to create your fork
 
 3. Clone your fork:
    ```bash
-   git clone https://github.com/[your-username]/alarmo.git
-   cd alarmo
+   git clone https://github.com/[your-username]/turzi-alarmo.git
+   cd turzi-alarmo
    ```
 
 ### 📦 Setup Python Environment

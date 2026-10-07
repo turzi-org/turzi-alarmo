@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nielsfaber/alarmo.git"
+    "url": "git+https://github.com/turzi-org/turzi-alarmo.git"
   },
   "author": "nielsfaber",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nielsfaber/alarmo/issues"
+    "url": "https://github.com/turzi-org/turzi-alarmo/issues"
   },
-  "homepage": "https://github.com/nielsfaber/alarmo#readme",
+  "homepage": "https://github.com/turzi-org/turzi-alarmo#readme",
   "dependencies": {
     "@babel/core": "^7.28.5",
     "@babel/plugin-proposal-class-properties": "^7.18.6",

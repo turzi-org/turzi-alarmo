@@ -116,7 +116,7 @@ export function handleError(err: any, ev: Event | HTMLElement) {
     <br />
     <br />
     Please
-    <a href="https://github.com/nielsfaber/alarmo/issues">report</a>
+    <a href="https://github.com/turzi-org/turzi-alarmo/issues">report</a>
     the bug.
   `;
   showErrorDialog(ev, errorMessage);

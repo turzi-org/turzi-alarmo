@@ -1,5 +1,5 @@
 name: Bug report
-description: Create a report to help improve Alarmo
+description: Create a report to help improve Turzi Alarmo
 labels: bug
 body:
   - type: markdown
@@ -13,7 +13,7 @@ body:
       label: Checklist
       description: "Before opening a bug report, please check the following:"
       options:
-        - label: I am using the latest version of Alarmo (latest version can be found [here](https://github.com/nielsfaber/alarmo/releases/latest))
+        - label: I am using the latest version of Turzi Alarmo (latest version can be found [here](https://github.com/turzi-org/turzi-alarmo/releases/latest))
           required: true
         - label: I checked for similar existing requests (both open and closed) before posting.
           required: true

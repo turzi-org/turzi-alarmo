@@ -46,7 +46,7 @@ var e=function(a,i){return e=Object.setPrototypeOf||{__proto__:[]}instanceof Arr
     <br />
     <br />
     Please
-    <a href="https://github.com/nielsfaber/alarmo/issues">report</a>
+    <a href="https://github.com/turzi-org/turzi-alarmo/issues">report</a>
     the bug.
   `);}const _s=(e,a)=>{var i,t,n,s,r;if(!e)return!1;switch(e){case Wn.STATE_ALARM_ARMED_AWAY:return null===(i=a[ts.ArmedAway])||void 0===i?void 0:i.enabled;case Wn.STATE_ALARM_ARMED_HOME:return null===(t=a[ts.ArmedHome])||void 0===t?void 0:t.enabled;case Wn.STATE_ALARM_ARMED_NIGHT:return null===(n=a[ts.ArmedNight])||void 0===n?void 0:n.enabled;case Wn.STATE_ALARM_ARMED_CUSTOM_BYPASS:return null===(s=a[ts.ArmedCustom])||void 0===s?void 0:s.enabled;case Wn.STATE_ALARM_ARMED_VACATION:return null===(r=a[ts.ArmedVacation])||void 0===r?void 0:r.enabled;default:return!0;}};function vs(e,a){return Object.entries(a).forEach(([a,i])=>{e=a in e&&"object"==typeof e[a]&&null!==e[a]?Object.assign(Object.assign({},e),{[a]:vs(e[a],i)}):Object.assign(Object.assign({},e),{[a]:i});}),e;}function bs(e,a){const i=e=>"object"==typeof e?i(e.name):e.trim().toLowerCase();return i(e)<i(a)?-1:1;}const fs=(e,a,i=!1)=>{i?history.replaceState(null,"",a):history.pushState(null,"",a),ss(window,"location-changed",{replace:i});};function ys(e){return e.substr(0,e.indexOf("."));}function ks(e){return e.substr(e.indexOf(".")+1);}function ws(e,a){const i={alert:"mdi:alert",automation:"mdi:playlist-play",calendar:"mdi:calendar",camera:"mdi:video",climate:"mdi:thermostat",configurator:"mdi:settings",conversation:"mdi:text-to-speech",device_tracker:"mdi:account",fan:"mdi:fan",group:"mdi:google-circles-communities",history_graph:"mdi:chart-line",homeassistant:"mdi:home-assistant",homekit:"mdi:home-automation",image_processing:"mdi:image-filter-frames",input_boolean:"mdi:drawing",input_datetime:"mdi:calendar-clock",input_number:"mdi:ray-vertex",input_select:"mdi:format-list-bulleted",input_text:"mdi:textbox",light:"mdi:lightbulb",mailbox:"mdi:mailbox",notify:"mdi:comment-alert",person:"mdi:account",plant:"mdi:flower",proximity:"mdi:apple-safari",remote:"mdi:remote",scene:"mdi:google-pages",script:"mdi:file-document",sensor:"mdi:eye",simple_alarm:"mdi:bell",sun:"mdi:white-balance-sunny",switch:"mdi:flash",timer:"mdi:timer",updater:"mdi:cloud-upload",vacuum:"mdi:robot-vacuum",water_heater:"mdi:thermometer",weblink:"mdi:open-in-new"};if(e in i)return i[e];switch(e){case"alarm_control_panel":switch(a){case"armed_home":return"mdi:bell-plus";case"armed_night":return"mdi:bell-sleep";case"disarmed":return"mdi:bell-outline";case"triggered":return"mdi:bell-ring";default:return"mdi:bell";}case"binary_sensor":return a&&"off"===a?"mdi:radiobox-blank":"mdi:checkbox-marked-circle";case"cover":return"closed"===a?"mdi:window-closed":"mdi:window-open";case"lock":return a&&"unlocked"===a?"mdi:lock-open":"mdi:lock";case"media_player":return a&&"off"!==a&&"idle"!==a?"mdi:cast-connected":"mdi:cast";case"zwave":switch(a){case"dead":return"mdi:emoticon-dead";case"sleeping":return"mdi:sleep";case"initializing":return"mdi:timer-sand";default:return"mdi:z-wave";}default:return"mdi:bookmark";}}const zs=c`
   ha-card {
@@ -3293,7 +3293,7 @@ var e=function(a,i){return e=Object.setPrototypeOf||{__proto__:[]}instanceof Arr
             ${Sn("title",this.hass.language)}
           </div>
           <div class="version">
-            v${"1.10.20"}
+            v${"1.10.21"}
           </div>
         </div>
 

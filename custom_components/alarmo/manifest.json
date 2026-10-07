@@ -6,16 +6,16 @@
     "notify"
   ],
   "codeowners": [
-    "@nielsfaber"
+    "@turzi-org"
   ],
   "config_flow": true,
   "dependencies": [
     "http",
     "panel_custom"
   ],
-  "documentation": "https://github.com/nielsfaber/alarmo",
+  "documentation": "https://github.com/turzi-org/turzi-alarmo",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/nielsfaber/alarmo/issues",
+  "issue_tracker": "https://github.com/turzi-org/turzi-alarmo/issues",
   "requirements": [],
-  "version": "1.10.20"
+  "version": "1.10.21"
 }

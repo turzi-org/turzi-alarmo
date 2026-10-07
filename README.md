@@ -1,9 +1,10 @@
-# Alarmo
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
+# Turzi Alarmo
 
 This is an alarm system integration for Home Assistant. It provides a user interface for setting up your own alarm system completely from the browser.
 
-- [Alarmo](#alarmo)
+Turzi Alarmo is the Turzi-maintained build of [Alarmo](https://github.com/nielsfaber/alarmo) by [@nielsfaber](https://github.com/nielsfaber), released under the Apache License 2.0. See [Credits](#credits).
+
+- [Turzi Alarmo](#turzi-alarmo)
   - [Introduction](#introduction)
     - [Features](#features)
     - [Preview](#preview)
@@ -57,7 +58,7 @@ This is an alarm system integration for Home Assistant. It provides a user inter
     - [Apple Homekit](#apple-homekit)
     - [Google Home](#google-home)
   - [Making Contributions](#making-contributions)
-  - [Say thank you](#say-thank-you)
+  - [Credits](#credits)
 
 
 ## Introduction
@@ -83,12 +84,12 @@ Alarmo consists of 3 parts:
 
 ### Preview
 
-![](https://raw.githubusercontent.com/nielsfaber/alarmo/main/screenshots/Preview.png)
+![](https://raw.githubusercontent.com/turzi-org/turzi-alarmo/main/screenshots/Preview.png)
 
 
 ## Installation
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nielsfaber&repository=alarmo&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=turzi-org&repository=turzi-alarmo&category=integration)
 
 <details>
 <summary>Click to show installation instructions</summary>
@@ -96,13 +97,13 @@ Alarmo consists of 3 parts:
 <li>Install files:</li>
 <ul>
 <li><u>Using HACS:</u><br>
-In the HACS panel, go to integrations and click the big orange '+' button. 
-Search for 'Alarmo' and click 'Install this repository in HACS'.</li>
+This repository is not in the HACS default list, so add it as a custom repository: in the HACS panel, open the menu (top right), choose 'Custom repositories', enter `https://github.com/turzi-org/turzi-alarmo` and pick the category 'Integration' (or use the button above).
+Then search for 'Turzi Alarmo' and click 'Download'.</li>
 <li><u>Manually:</u><br>
-Download the <a href="https://github.com/nielsfaber/alarmo/releases">latest release</a> as a zip file and extract it into the `custom_components` folder in your HA installation.</li>
+Download the <a href="https://github.com/turzi-org/turzi-alarmo/releases">latest release</a> as a zip file and extract it into the `custom_components` folder in your HA installation.</li>
 </ul>
 <li>Restart HA to load the integration into HA.</li>
-<li>Go to Configuration -> Integrations and click the big orange '+' button. Look for Alarmo and click to add it.</li>
+<li>Go to Configuration -> Integrations and click the big orange '+' button. Look for Turzi Alarmo and click to add it.</li>
 <li>The Alarmo integration is ready for use. You can find the configuration panel in the menu on the left.</li>
 </ol>
 </details>
@@ -118,7 +119,7 @@ Download the <a href="https://github.com/nielsfaber/alarmo/releases">latest rele
 In the HACS panel, there should be an notification when a new version is available. Follow the instructions within HACS to update the installation files.
 </li>
 <li><u>Manually:</u><br>
-Download the <a href="https://github.com/nielsfaber/alarmo/releases">latest release</a> as a zip file and extract it into the <code>custom_components</code> folder in your HA installation, overwriting the previous installation.
+Download the <a href="https://github.com/turzi-org/turzi-alarmo/releases">latest release</a> as a zip file and extract it into the <code>custom_components</code> folder in your HA installation, overwriting the previous installation.
 </li>
 </ul>
 <li>Restart HA to load the changes.</li>
@@ -169,7 +170,7 @@ In the <code>custom_components</code> directory, remove the 'alarmo' folder.
 ### Alarm functionality
 The following diagram describes the operational states of the alarm and provides a simplified overview of the functionality.
 
-![](https://raw.githubusercontent.com/nielsfaber/alarmo/main/screenshots/states.png)
+![](https://raw.githubusercontent.com/turzi-org/turzi-alarmo/main/screenshots/states.png)
 
 
 ### Arm modes
@@ -606,7 +607,7 @@ For using this, you first need to install the HA app on your iOS or Android devi
 
 Example of the notification editor:
 
-<img src="https://raw.githubusercontent.com/nielsfaber/alarmo/main/screenshots/notification_gui.png">
+<img src="https://raw.githubusercontent.com/turzi-org/turzi-alarmo/main/screenshots/notification_gui.png">
 
 ##### Wildcards
 The alarmo notifications editor contains some wildcards which can be used to provide adaptive info to your push message.
@@ -627,7 +628,7 @@ Alarmo has built-in support for actionable push notification with the 'failed to
 
 Example:
 
-<img src="https://raw.githubusercontent.com/nielsfaber/alarmo/main/screenshots/actionable_push_message.png" width="400">
+<img src="https://raw.githubusercontent.com/turzi-org/turzi-alarmo/main/screenshots/actionable_push_message.png" width="400">
 
 **Available actions**
 
@@ -837,8 +838,10 @@ It is also possible to arm/disarm the alarm as a step in a routine (e.g. the *'G
 Want to contribute? See the [Development](./DEVELOPMENT.md) documentation for setup instructions.
 
 
-## Say thank you
-If you want to make donation as appreciation of my work, you can do so via PayPal or buy me a coffee. Thank you!
+## Credits
+Turzi Alarmo is based on [Alarmo](https://github.com/nielsfaber/alarmo), created by [@nielsfaber](https://github.com/nielsfaber) and licensed under the Apache License 2.0 (see [LICENSE](./LICENSE)).
+
+The links below are the original author's donation pages. If you appreciate the Alarmo project, you can support them there:
 
 <a href="https://www.paypal.com/donate/?business=CLL4T6Y8ACXNN&no_recurring=0&item_name=Thank+you+for+supporting+my+work+on+the+Alarmo+project%2E+Your+donation+is+much+appreciated%21&currency_code=EUR" target="_blank"><img src="https://pics.paypal.com/00/s/YzlhMzI2ZjYtZDQxMi00NzNiLThmZTktOTk3MmEyYTA2Zjc0/file.PNG" width="150" /></a>
 <a href="https://www.buymeacoffee.com/vrdx7mi" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a>
