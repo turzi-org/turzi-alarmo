@@ -1,26 +1,65 @@
+name: Build release
+
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to rebuild and upload to (e.g. v1.10.21). Leave empty to only build the zip as a workflow artifact."
+        required: false
+        type: string
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # upload alarmo.zip to the release
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Get version
-        id: version
-        uses: home-assistant/actions/helpers/version@master
-
-      - name: Patch manifest and zip
-        run: |
-          sed -i 's/v0.0.0/${{ steps.version.outputs.version }}/' custom_components/alarmo/manifest.json
-        
-          cd custom_components/alarmo/
-          zip ../../alarmo.zip ./* frontend/dist/* -x '.*'
-      - uses: JasonEtco/upload-to-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
         with:
-          args: ./alarmo.zip application/zip
+          ref: ${{ inputs.tag || github.ref }}
+
+      - name: Check versions match
+        run: |
+          manifest=$(jq -r .version custom_components/alarmo/manifest.json)
+          # const.py and const.ts use CRLF line endings, so cut between the quotes instead of anchoring on the line end
+          backend=$(grep -m1 '^VERSION = ' custom_components/alarmo/const.py | cut -d'"' -f2)
+          frontend=$(grep -m1 '^export const VERSION = ' custom_components/alarmo/frontend/src/const.ts | cut -d"'" -f2)
+          echo "manifest=$manifest backend=$backend frontend=$frontend tag=${TAG:-none}"
+          if [ "$manifest" != "$backend" ] || [ "$manifest" != "$frontend" ]; then
+            echo "::error::Version mismatch between manifest.json, const.py and frontend/src/const.ts"
+            exit 1
+          fi
+          if [ -n "$TAG" ] && [ "v$manifest" != "$TAG" ]; then
+            echo "::error::Release tag $TAG does not match the version v$manifest in manifest.json"
+            exit 1
+          fi
+
+      - name: Build zip
+        working-directory: custom_components/alarmo
+        run: |
+          zip ../../alarmo.zip ./*.py ./*.json ./*.yaml translations/*.json frontend/dist/*
+          unzip -l ../../alarmo.zip
+          unzip -l ../../alarmo.zip | grep -q ' frontend/dist/alarm-panel.js$'
+          unzip -l ../../alarmo.zip | grep -q ' manifest.json$'
+          unzip -l ../../alarmo.zip | grep -q ' translations/en.json$'
+
+      - name: Upload zip to the release
+        if: env.TAG != ''
+        run: gh release upload "$TAG" alarmo.zip --clobber
+
+      - name: Keep zip as a workflow artifact
+        if: env.TAG == ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: alarmo.zip
+          path: alarmo.zip
